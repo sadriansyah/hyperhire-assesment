@@ -119,7 +119,7 @@ export const addMenu = createAsyncThunk<CreateMenu, CreateMenu>(
 export const fetchDropdownItems = createAsyncThunk(
   "menus/fetchDropdownItems",
   async () => {
-    const response = await fetch("http://localhost:3000/api/menus/selection");
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/menus/selection`);
     if (!response.ok) {
       throw new Error("Failed to fetch dropdown items");
     }
